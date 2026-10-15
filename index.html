@@ -1,0 +1,1264 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f5">
+<title>Un pequeño mundo para Evelin ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Patrick+Hand&family=Pacifico&display=swap');
+
+:root {
+  --pink: #f5b8c9;
+  --pink-dark: #d87597;
+  --cream: #fffaf0;
+  --paper: #fffdf7;
+  --purple: #c8b6e9;
+  --yellow: #f9dfa0;
+  --blue: #b9dce8;
+  --green: #c9ddc0;
+  --ink: #665363;
+  --shadow: 0 12px 30px #86657818;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff4f4;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 3px solid #9b75cb;
+  outline-offset: 4px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.page {
+  min-height: 100svh;
+  padding: 75px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  background:
+    radial-gradient(ellipse at 8% 15%, #ffe0e7 0 9%, transparent 9.5%),
+    radial-gradient(ellipse at 90% 80%, #e8defa 0 12%, transparent 12.5%),
+    #fff6ed;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.3;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+}
+
+p {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.4rem;
+}
+
+.top-sticker {
+  position: absolute;
+  font-size: 2rem;
+  animation: bob 4s ease-in-out infinite;
+}
+
+.sticker-a {
+  top: 10%;
+  left: 8%;
+}
+
+.sticker-b {
+  top: 17%;
+  right: 9%;
+  animation-delay: -2s;
+}
+
+.sticker-c {
+  bottom: 10%;
+  left: 12%;
+  animation-delay: -1s;
+}
+
+.sticker-d {
+  bottom: 13%;
+  right: 10%;
+  animation-delay: -3s;
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+}
+
+.tape {
+  position: absolute;
+  width: 75px;
+  height: 22px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  background: #f4c5cbcc;
+  z-index: 2;
+}
+
+.cover-card {
+  position: relative;
+  background: var(--paper);
+  width: min(100%, 510px);
+  padding: 40px 25px 32px;
+  border: 2px solid white;
+  border-radius: 4px;
+  box-shadow: 7px 9px 0 #e7c9c9, var(--shadow);
+  transform: rotate(-1deg);
+}
+
+.cover-card::before {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border: 1px dashed #e7b5c1;
+  pointer-events: none;
+}
+
+.cover-content {
+  position: relative;
+}
+
+.cover-art {
+  font-size: clamp(5rem, 20vw, 8rem);
+  margin: 8px 0;
+  filter: drop-shadow(3px 6px 0 #f4dbe2);
+  animation: bob 3.5s ease-in-out infinite;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--pink-dark);
+}
+
+.name {
+  color: #d77d9b;
+  overflow-wrap: anywhere;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 24px;
+  background: #dc8ba5;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 5px 0 #bd6e8a;
+  transition: transform .2s, box-shadow .2s;
+  margin: 8px 4px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #bd6e8a;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #bd6e8a;
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-lilac {
+  background: #a991ce;
+  box-shadow: 0 5px 0 #8970b2;
+}
+
+.btn-lilac:hover {
+  box-shadow: 0 8px 0 #8970b2;
+}
+
+.btn-lilac:active {
+  box-shadow: 0 2px 0 #8970b2;
+}
+
+.music-control {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  background: #fffdf1ed;
+  color: var(--ink);
+  border: 1px solid #ecd4d9;
+  border-radius: 30px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px #7a526218;
+  font-size: .83rem;
+  font-weight: 800;
+}
+
+.album {
+  background:
+    radial-gradient(circle at 4% 8%, #f8dfe5 0 45px, transparent 46px),
+    radial-gradient(circle at 94% 91%, #e2d9f5 0 65px, transparent 66px),
+    #fff8eb;
+}
+
+.section-label {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #f7dfac;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+}
+
+.progress-wrap {
+  width: min(100%, 440px);
+  text-align: left;
+  margin: 14px auto 24px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .82rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  height: 10px;
+  border-radius: 20px;
+  background: #eedfe5;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #eaa0b9, #bba7e4);
+  border-radius: 20px;
+  transition: width .4s ease;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: min(100%, 650px);
+  margin: 8px auto 28px;
+}
+
+.card {
+  min-width: 0;
+  min-height: 220px;
+  position: relative;
+  padding: 25px 15px 18px;
+  border: 1px solid #e7d8cf;
+  border-radius: 3px;
+  color: var(--ink);
+  box-shadow: 3px 5px 0 #e9d9d1, 0 9px 20px #79566c10;
+  transition: transform .25s;
+  overflow-wrap: anywhere;
+}
+
+.card:nth-child(1) {
+  background: #fff0ed;
+  transform: rotate(-2deg);
+}
+
+.card:nth-child(2) {
+  background: #f0eaff;
+  transform: rotate(2deg);
+}
+
+.card:nth-child(3) {
+  background: #fff3c9;
+  transform: rotate(1.5deg);
+}
+
+.card:nth-child(4) {
+  background: #e8f4e5;
+  transform: rotate(-1.5deg);
+}
+
+.card:hover:not(.opened) {
+  transform: translateY(-5px) rotate(0);
+}
+
+.card.opened {
+  transform: rotate(0);
+  cursor: default;
+}
+
+.card:disabled {
+  opacity: 1;
+}
+
+.card-emoji {
+  display: block;
+  font-size: 3.4rem;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1.55rem;
+  margin-bottom: 7px;
+}
+
+.card-hint {
+  font-size: .78rem;
+  opacity: .75;
+}
+
+.card-message {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  animation: reveal .5s ease;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.opened-mark {
+  display: block;
+  font-size: .8rem;
+  margin-top: 10px;
+  color: #7e6797;
+  font-weight: 800;
+}
+
+.locked-note {
+  width: min(100%, 450px);
+  border: 1px dashed #d7b8c7;
+  padding: 16px;
+  background: #ffffff9c;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  border-radius: 4px;
+}
+
+.letter-section {
+  background: #f0eafa;
+}
+
+.envelope-area {
+  position: relative;
+  margin: 12px 0 25px;
+}
+
+.envelope {
+  border: 0;
+  background: transparent;
+  font-size: clamp(6rem, 23vw, 9rem);
+  filter: drop-shadow(0 9px 5px #a995c333);
+  transition: transform .3s;
+}
+
+.envelope:hover {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.paper {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 35px 25px;
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 35px,
+      #eddfe4 36px
+    ),
+    #fffdf7;
+  border: 1px solid #e5cbd2;
+  box-shadow: 6px 8px 0 #d9cbe9;
+  animation: reveal .6s ease;
+  text-align: left;
+}
+
+.paper h2,
+.paper .signature {
+  text-align: center;
+}
+
+.paper p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.25rem;
+  line-height: 1.85;
+  max-width: none;
+}
+
+.signature {
+  font-family: 'Pacifico', cursive !important;
+  color: #c87998;
+  font-size: 1.4rem !important;
+  margin-top: 25px;
+}
+
+.final-section {
+  background:
+    radial-gradient(circle at 10% 10%, #fff0c7 0 55px, transparent 56px),
+    radial-gradient(circle at 90% 90%, #e4dafa 0 75px, transparent 76px),
+    #fff0f3;
+}
+
+.gift-button {
+  background: transparent;
+  border: 0;
+  font-size: clamp(7rem, 25vw, 10rem);
+  filter: drop-shadow(0 10px 7px #a26e8720);
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+.final-paper {
+  text-align: center;
+}
+
+.final-paper h2 {
+  color: #c87998;
+}
+
+.final-paper p {
+  text-align: center;
+}
+
+/* Torta interactiva del capítulo 3 */
+.cake-emoji {
+  text-align: center;
+  margin: 10px 0 6px;
+}
+
+.final-paper .cake-prompt {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #c87998;
+  margin-bottom: 16px;
+}
+
+.cake-panda {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  margin: 0 auto 16px;
+  border-radius: 16px;
+  box-shadow: 3px 5px 0 #e9d9d1, 0 9px 20px #79566c10;
+  animation: reveal .5s ease;
+}
+
+.cake {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.cake:hover {
+  transform: translateY(-3px);
+}
+
+.cake:active {
+  transform: translateY(0) scale(.98);
+}
+
+.cake-plate {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 180px;
+  height: 22px;
+  transform: translateX(-50%);
+  background: linear-gradient(#efe3fb, #cdb8e8);
+  border-radius: 50%;
+  box-shadow: 0 6px 10px #a98ecf30;
+}
+
+.cake-body {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 144px;
+  height: 84px;
+  transform: translateX(-50%);
+  background: linear-gradient(#f9c9d7, #eb9db8);
+  border-radius: 10px 10px 8px 8px;
+  box-shadow: inset 0 -8px 0 #d97f9d, inset 0 8px 0 #fdd9e3;
+  overflow: hidden;
+}
+
+.cake-body::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff2b8;
+  box-shadow: 26px 18px 0 #b7dbe8, 58px 34px 0 #c9ddc0,
+    92px 12px 0 #f7c6d4, 116px 44px 0 #fff2b8;
+}
+
+.cake-frosting {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  width: 144px;
+  height: 26px;
+  transform: translateX(-50%);
+  background: #fff4f6;
+  border-radius: 14px 14px 22px 22px;
+  box-shadow: inset 0 -6px 0 #ffe0e7;
+}
+
+.cake-frosting::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  background: #fff4f6;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 34px 0 0 0 #fff4f6, 66px 0 0 0 #fff4f6, 98px 0 0 0 #fff4f6;
+}
+
+.cake-candle {
+  position: absolute;
+  left: 50%;
+  bottom: 118px;
+  width: 12px;
+  height: 44px;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(45deg, #fff 0 6px, #f3a8bd 6px 12px);
+  border-radius: 3px;
+}
+
+.cake-flame {
+  position: absolute;
+  left: 50%;
+  bottom: 160px;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%) rotate(-45deg);
+  background: radial-gradient(circle at 58% 62%, #fff9d0 0 22%, #ffd24d 45%, #ff8a3d 82%, #ff6a2b);
+  border-radius: 50% 50% 50% 50%;
+  border-top-left-radius: 0;
+  box-shadow: 0 0 16px 5px #ffb04d66;
+  transform-origin: center bottom;
+  animation: flame .3s infinite alternate;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+@keyframes flame {
+  from {
+    transform: translateX(-50%) rotate(-45deg) scale(1);
+    box-shadow: 0 0 16px 5px #ffb04d66;
+  }
+  to {
+    transform: translateX(-50%) rotate(-45deg) scale(1.12) translateY(-2px);
+    box-shadow: 0 0 22px 8px #ffb04d88;
+  }
+}
+
+.cake-flame.out {
+  opacity: 0;
+  transform: translateX(-50%) rotate(-45deg) scale(.2) translateY(-20px);
+  animation: none;
+}
+
+.cake-smoke {
+  position: absolute;
+  left: 50%;
+  bottom: 156px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cfcfcf99;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cake.blown .cake-smoke {
+  animation: smoke 1.8s ease-out forwards;
+}
+
+@keyframes smoke {
+  0% {
+    opacity: .8;
+    transform: translate(-50%, 0) scale(.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80px) scale(2.4);
+  }
+}
+
+footer {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.05rem;
+  margin-top: 28px;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 15;
+}
+
+.particle {
+  position: absolute;
+  top: -35px;
+  animation: fall 3.8s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110svh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 80px 16px 45px;
+  }
+
+  .cover-card {
+    padding: 35px 18px 25px;
+  }
+
+  .cards {
+    gap: 14px;
+  }
+
+  .card {
+    min-height: 205px;
+    padding: 23px 10px 15px;
+  }
+
+  .card-emoji {
+    font-size: 2.7rem;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+  }
+
+  .card-message {
+    font-size: 1.08rem;
+  }
+
+  .music-control {
+    font-size: .76rem;
+    padding: 9px 11px;
+  }
+
+  .paper {
+    padding: 28px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles" aria-hidden="true"></div>
+
+<audio id="bgMusic" src="teamare.mp3" loop preload="auto"></audio>
+
+<button
+  class="music-control"
+  id="musicButton"
+  type="button"
+  onclick="toggleMusic()"
+  aria-pressed="false"
+>
+  ♫ Activar música
+</button>
+
+<!-- PORTADA -->
+<section class="page hero" id="inicio">
+
+  <span class="top-sticker sticker-a">🌷</span>
+  <span class="top-sticker sticker-b">🦋</span>
+  <span class="top-sticker sticker-c">💌</span>
+  <span class="top-sticker sticker-d">⭐</span>
+
+  <div class="cover-card">
+    <div class="tape"></div>
+
+    <div class="cover-content">
+      <p class="eyebrow">Un pequeño regalo hecho con cariño</p>
+
+      <div class="cover-art" aria-hidden="true">🎂</div>
+
+      <h1>¡Feliz cumpleaños!</h1>
+
+      <p class="subtitle">
+        Hoy el mundo tiene un motivo más para celebrar...
+      </p>
+
+      <h2 class="name">Evelin ♡</h2>
+
+      <p>
+        Preparé unas pequeñas páginas llenas de buenos deseos,
+        detalles bonitos y una sorpresa para ti.
+      </p>
+
+      <button class="btn" onclick="abrirAlbum()">
+        Abrir mi álbum ✨
+      </button>
+    </div>
+  </div>
+
+  <p style="margin-top:30px;font-family:'Patrick Hand';">
+    Hecho con mucho cariño ♡
+  </p>
+</section>
+
+<!-- ÁLBUM -->
+<section class="page album hidden" id="album">
+
+  <span class="section-label">Capítulo 01 · Pequeños detalles</span>
+
+  <h2>Unas cositas para ti, Evelin 🌷</h2>
+
+  <p>
+    Cada papelito guarda un deseo bonito.
+    Toca las cuatro tarjetas para descubrir todos sus mensajes.
+  </p>
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>Tu pequeño álbum</span>
+      <span id="progressText">0 de 4 descubiertas</span>
+    </div>
+
+    <div
+      class="progress-track"
+      role="progressbar"
+      aria-label="Tarjetas descubiertas"
+      aria-valuemin="0"
+      aria-valuemax="4"
+      aria-valuenow="0"
+      id="progressTrack"
+    >
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <button
+      class="card"
+      id="card0"
+      onclick="revelar(0)"
+      aria-expanded="false"
+    >
+      <span class="tape"></span>
+      <span class="card-emoji" aria-hidden="true">🌻</span>
+      <span class="card-title">Un deseo</span>
+      <span class="card-hint" id="hint0">Abrir papelito ♡</span>
+      <span class="card-message hidden" id="message0">
+        Deseo que cada sueño que guardas en tu corazón encuentre su camino,
+        que tengas la valentía de perseguir lo que te hace feliz y que la
+        vida te sorprenda con oportunidades que nunca imaginaste.
+      </span>
+    </button>
+
+    <button
+      class="card"
+      id="card1"
+      onclick="revelar(1)"
+      aria-expanded="false"
+    >
+      <span class="tape"></span>
+      <span class="card-emoji" aria-hidden="true">🦋</span>
+      <span class="card-title">Una sonrisa</span>
+      <span class="card-hint" id="hint1">Abrir papelito ♡</span>
+      <span class="card-message hidden" id="message1">
+        Que nunca te falten motivos para ser feliz, personas que te abracen
+        el alma y momentos que te hagan pensar que, a pesar de todo, la vida
+        tiene cosas maravillosas.
+      </span>
+    </button>
+
+    <button
+      class="card"
+      id="card2"
+      onclick="revelar(2)"
+      aria-expanded="false"
+    >
+      <span class="tape"></span>
+      <span class="card-emoji" aria-hidden="true">🍓</span>
+      <span class="card-title">Un recordatorio</span>
+      <span class="card-hint" id="hint2">Abrir papelito ♡</span>
+      <span class="card-message hidden" id="message2">
+        Si algún día olvidas lo especial que eres, recuerda que hay cosas
+        en ti que te hacen única. Nunca cambies tu esencia por encajar en
+        el mundo; sigue siendo tú, porque eso ya es algo bonito.
+      </span>
+    </button>
+
+    <button
+      class="card"
+      id="card3"
+      onclick="revelar(3)"
+      aria-expanded="false"
+    >
+      <span class="tape"></span>
+      <span class="card-emoji" aria-hidden="true">🌈</span>
+      <span class="card-title">Un nuevo capítulo</span>
+      <span class="card-hint" id="hint3">Abrir papelito ♡</span>
+      <span class="card-message hidden" id="message3">
+        Que esta nueva etapa te regale nuevas ilusiones, experiencias
+        inolvidables y personas que sumen cosas bonitas a tu vida. Que
+        tengas el valor de cerrar ciclos y la ilusión de recibir todo lo
+        bueno que está por venir.
+      </span>
+    </button>
+
+  </div>
+
+  <p id="unlockNote" class="locked-note" aria-live="polite">
+    🔒 Tu dedicatoria especial te espera.
+    Descubre las cuatro tarjetas para abrirla.
+  </p>
+
+  <button
+    class="btn btn-lilac"
+    id="letterButton"
+    onclick="irA('carta')"
+    disabled
+  >
+    La dedicatoria está esperando 💌
+  </button>
+
+</section>
+
+<!-- CARTA -->
+<section class="page letter-section hidden" id="carta">
+
+  <span class="section-label">Capítulo 02 · Una carta para ti</span>
+
+  <h2>Hay algo que quería decirte...</h2>
+
+  <p>
+    No es un regalo que puedas envolver,
+    pero sí uno que puedes leer.
+  </p>
+
+  <div class="envelope-area">
+    <button
+      class="envelope"
+      id="envelope"
+      onclick="abrirCarta()"
+      aria-label="Abrir el sobre"
+    >
+      💌
+    </button>
+  </div>
+
+  <p id="envelopeHint">Toca el sobre para abrir tu carta ♡</p>
+
+  <article class="paper hidden" id="paper">
+    <h2>Querida Evelin ♡</h2>
+
+    <p>
+      Hoy es un día especial porque celebramos tu vida y todo lo bonito
+      que todavía está por llegar.
+    </p>
+
+    <p>
+      Quería prepararte algo diferente, un pequeño rincón donde
+      pudieras encontrar palabras bonitas y un recordatorio de que
+      hay personas que se alegran de verte sonreír.
+    </p>
+
+    <p>
+      Deseo que este nuevo año te sorprenda con momentos felices,
+      personas sinceras, sueños cumplidos y motivos para sentirte
+      orgullosa de todo lo que eres.
+    </p>
+
+    <p>
+      Y, entre todos esos buenos deseos, también quería decirte que
+      me alegra poder dedicarte este pequeño detalle.
+      Espero que te saque una sonrisa. 🌷
+    </p>
+
+    <p class="signature">Con mucho cariño ♡</p>
+  </article>
+
+  <button
+    class="btn hidden"
+    id="finalButton"
+    onclick="irA('final')"
+  >
+    Descubrir el último regalo 🎁
+  </button>
+
+</section>
+
+<!-- SORPRESA FINAL -->
+<section class="page final-section hidden" id="final">
+
+  <span class="top-sticker sticker-a">⭐</span>
+  <span class="top-sticker sticker-b">🌸</span>
+
+  <span class="section-label">Capítulo 03 · Solo para ti</span>
+
+  <h1>Un último detallito...</h1>
+
+  <p>
+    Llegaste hasta aquí, Evelin.
+    Hay un último mensaje guardado para ti.
+  </p>
+
+  <button
+    class="gift-button"
+    id="giftButton"
+    onclick="abrirRegalo()"
+    aria-label="Abrir el regalo final"
+  >
+    🎁
+  </button>
+
+  <p>Toca la cajita para descubrir tu dedicatoria ♡</p>
+
+  <article class="paper final-paper hidden" id="finalPaper">
+    <div style="font-size:3rem;">🌷💗🌷</div>
+
+    <h2>Para Evelin</h2>
+
+    <p>
+      Feliz cumpleaños, Evelin.
+    </p>
+
+    <p>
+      Que la vida te regale momentos que se queden para siempre en tu
+      memoria, personas que hagan más bonito tu camino y razones para
+      seguir creyendo en todo lo bueno que está por venir.
+    </p>
+
+    <p>
+      Ojalá este pequeño regalo se convierta en uno de esos detalles
+      que te sacan una sonrisa cuando vuelves a recordarlos.
+    </p>
+
+    <p>
+      Gracias por inspirar este pequeño proyecto.
+      Hoy te deseo un día tan bonito como todos los buenos momentos
+      que todavía te esperan.
+    </p>
+
+    <h2>¡Que seas muy feliz!</h2>
+
+    <div class="cake-emoji">
+      <p class="cake-prompt" id="cakePrompt">Pide tu deseo y toca la torta 🕯️</p>
+
+      <img
+        class="cake-panda hidden"
+        id="cakePanda"
+        src="Panda.png"
+        alt="Un panda celebrando tu cumpleaños"
+      >
+
+      <button
+        class="cake"
+        id="cakeButton"
+        type="button"
+        onclick="soplarVela()"
+        aria-label="Torta de cumpleaños con una vela encendida. Toca para pedir tu deseo y apagar la vela."
+      >
+        <span class="cake-plate"></span>
+        <span class="cake-body"></span>
+        <span class="cake-frosting"></span>
+        <span class="cake-candle"></span>
+        <span class="cake-smoke"></span>
+        <span class="cake-flame" id="cakeFlame"></span>
+      </button>
+    </div>
+
+    <p class="signature">Con cariño, para ti ♡</p>
+  </article>
+
+  <button class="btn btn-lilac" onclick="irA('inicio')">
+    Volver a la portada ↻
+  </button>
+
+  <footer>
+    Un pequeño álbum, muchos buenos deseos y una sonrisa para ti. ♡
+  </footer>
+
+</section>
+
+<script>
+const descubiertas = new Set();
+const bgMusic = document.getElementById('bgMusic');
+let musicActive = false;
+
+function irA(id) {
+  const destino = document.getElementById(id);
+
+  if (!destino) return;
+
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.add('hidden');
+  });
+
+  destino.classList.remove('hidden');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+  if (id === 'album') {
+    celebrar(8);
+  }
+}
+
+function abrirAlbum() {
+  irA('album');
+  iniciarMusica();
+}
+
+function revelar(n) {
+  if (descubiertas.has(n)) return;
+
+  descubiertas.add(n);
+
+  const tarjeta = document.getElementById('card' + n);
+  const mensaje = document.getElementById('message' + n);
+  const pista = document.getElementById('hint' + n);
+
+  mensaje.classList.remove('hidden');
+  pista.classList.add('hidden');
+
+  tarjeta.classList.add('opened');
+  tarjeta.setAttribute('aria-expanded', 'true');
+
+  document.getElementById('progressText').textContent =
+    descubiertas.size + ' de 4 descubiertas';
+
+  document.getElementById('progressBar').style.width =
+    (descubiertas.size / 4 * 100) + '%';
+
+  document.getElementById('progressTrack').setAttribute(
+    'aria-valuenow',
+    descubiertas.size
+  );
+
+  celebrar(7);
+
+  if (descubiertas.size === 4) {
+    desbloquearCarta();
+  }
+}
+
+function desbloquearCarta() {
+  const boton = document.getElementById('letterButton');
+  const nota = document.getElementById('unlockNote');
+
+  boton.disabled = false;
+  boton.textContent = '¡Tu dedicatoria está lista! 💌';
+
+  nota.textContent =
+    '🔓 ¡Lo descubriste todo! Tu dedicatoria especial está lista para abrirse.';
+
+  nota.style.background = '#f5eaf7';
+
+  celebrar(22);
+}
+
+function abrirCarta() {
+  document.getElementById('paper').classList.remove('hidden');
+  document.getElementById('envelope').classList.add('hidden');
+  document.getElementById('envelopeHint').classList.add('hidden');
+  document.getElementById('finalButton').classList.remove('hidden');
+
+  celebrar(18);
+}
+
+function abrirRegalo() {
+  const papel = document.getElementById('finalPaper');
+
+  papel.classList.remove('hidden');
+  document.getElementById('giftButton').textContent = '💝';
+
+  celebrar(40);
+}
+
+let velaApagada = false;
+
+function soplarVela() {
+  if (velaApagada) return;
+
+  velaApagada = true;
+
+  document.getElementById('cakeFlame').classList.add('out');
+  document.getElementById('cakeButton').classList.add('blown');
+  document.getElementById('cakePrompt').classList.add('hidden');
+  document.getElementById('cakePanda').classList.remove('hidden');
+
+  celebrar(30);
+}
+
+/* Música de fondo: reproduce el archivo teamare.mp3 de esta carpeta. */
+
+function actualizarBotonMusica() {
+  const boton = document.getElementById('musicButton');
+
+  if (musicActive) {
+    boton.textContent = '♫ Pausar música';
+    boton.setAttribute('aria-pressed', 'true');
+  } else {
+    boton.textContent = '♫ Activar música';
+    boton.setAttribute('aria-pressed', 'false');
+  }
+}
+
+function toggleMusic() {
+  if (musicActive) {
+    detenerMusica();
+    return;
+  }
+
+  iniciarMusica();
+}
+
+function iniciarMusica() {
+  const boton = document.getElementById('musicButton');
+
+  bgMusic.volume = 0.6;
+
+  bgMusic.play().then(() => {
+    musicActive = true;
+    actualizarBotonMusica();
+  }).catch(() => {
+    musicActive = false;
+    boton.textContent = '♫ Pulsa para activar';
+  });
+}
+
+function detenerMusica() {
+  bgMusic.pause();
+  musicActive = false;
+  actualizarBotonMusica();
+}
+
+function celebrar(cantidad = 20) {
+  const contenedor = document.getElementById('particles');
+  const figuras = ['♡', '⭐', '🌸', '✨', '💗', '🎀', '🌷'];
+
+  for (let i = 0; i < cantidad; i++) {
+    const particula = document.createElement('span');
+
+    particula.className = 'particle';
+    particula.textContent =
+      figuras[Math.floor(Math.random() * figuras.length)];
+
+    particula.style.left = Math.random() * 100 + '%';
+    particula.style.animationDelay = Math.random() * 1.2 + 's';
+    particula.style.fontSize = (14 + Math.random() * 17) + 'px';
+
+    contenedor.appendChild(particula);
+
+    setTimeout(() => particula.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
